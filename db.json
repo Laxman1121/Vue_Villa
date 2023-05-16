@@ -1,0 +1,36 @@
+{
+  "villas":[
+      {
+          "id":1,
+          "name":"Rajan Villa",
+
+          "price":200,
+          "features":["Swimming Pool","Theatre Space","Garden area"],
+          "location":"Bangalore,Near Marathali Road",
+          "url":"https://cdn.quasar.dev/img/parallax2.jpg"
+      },
+      {
+        "id":2,
+        "name":"Rajan Vill",
+        "price":200,
+        "features":["Swimming Pool","Theatre Space","Garden area"],
+        "location":"Bangalore,Near Marathali Road",  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
+      },
+      {
+        "id":3,
+        "price":200,
+        "name":"Rajan Villa",
+        "features":["Swimming Pool","Theatre Space","Garden area"],
+        "location":"Bangalore,Near Marathali Road",  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
+      },
+      {
+          "id":4,
+          "name":"Rajan Villa",
+          "price":200,
+          "features":["Swimming Pool","Theatre Space","Garden area"],
+          "location":"Bangalore,Near Marathali Road",
+          "url":"https://cdn.quasar.dev/img/parallax2.jpg"
+      }
+  ]
+}
+
