@@ -16,15 +16,7 @@
                   <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg"></q-carousel-slide>
             
                   <template v-slot:control>
-                    <!-- <q-carousel-control
-                      position="top-right"
-                      :offset="[54, 120]"
-                      class="text-white rounded-borders"
-                      style="background: rgba(0, 0, 0, .3); padding: 4px 8px;"
-                    >
-                      <q-toggle dense dark color="orange" v-model="autoplay" label="Auto Play"></q-toggle>
-                    </q-carousel-control>
-             -->
+                 
                     <q-carousel-control
                       position="bottom-right"
                       :offset="[18, 18]"
@@ -84,6 +76,7 @@ import {useRoute,useRouter} from "vue-router";
 import axios from 'axios'
 const route =useRoute();
 const router =useRouter();
+
 const villa =ref({})
 const {id}=route.params;
 const loading = ref([
