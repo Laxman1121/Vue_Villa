@@ -35,7 +35,7 @@ import Card from "./Card.vue";
 import axios from "axios";
 const villas = ref([]);
 const paginate = ref(5);
-const d = ref();
+
 const showLoad = ref(true);
 const loading = ref(false);
 const getVillaData = async () => {
@@ -75,13 +75,13 @@ onMounted(async () => {
   column-gap: 55px;
 
   justify-content: flex-start;
-
+  margin-left: 30px;
   flex-wrap: wrap;
 }
 .outer {
   display: flex;
   flex-direction: column;
-
+  margin: 20px;
   align-items: center;
 }
 

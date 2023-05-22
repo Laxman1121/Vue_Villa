@@ -1,83 +1,95 @@
 {
-  "villas":[
-      {
-          "id":1,
-          "name":"Rajan Villa",
+  "villas": [
+    {
+      "id": 1,
+      "name": "Rajan Villa",
 
-          "price":200,
-          "features":["Swimming Pool","Theatre Space","Garden area"],
-          "location":"Bangalore,Near Marathali Road",
-          "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-      },
-      {
-        "id":2,
-        "name":"Rajan Vill",
-        "price":200,
-        "features":["Swimming Pool","Theatre Space","Garden area"],
-        "location":"Bangalore,Near Marathali Road",  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-      },
-      {
-        "id":3,
-        "price":200,
-        "name":"Rajan Villa",
-        "features":["Swimming Pool","Theatre Space","Garden area"],
-        "location":"Bangalore,Near Marathali Road",  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-      },
-      {
-          "id":4,
-          "name":"Rajan Villa",
-          "price":200,
-          "features":["Swimming Pool","Theatre Space","Garden area"],
-          "location":"Bangalore,Near Marathali Road",
-          "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-      },
-      {
-        "id":4,
-        "name":"Rajan Villa",
-        "price":200,
-        "features":["Swimming Pool","Theatre Space","Garden area"],
-        "location":"Bangalore,Near Marathali Road",
-        "url":"https://cdn.quasar.dev/img/parallax2.jpg"
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
     },
     {
-      "id":4,
-      "name":"Rajan Villa",
-      "price":200,
-      "features":["Swimming Pool","Theatre Space","Garden area"],
-      "location":"Bangalore,Near Marathali Road",
-      "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-  },
-  {
-    "id":4,
-    "name":"Rajan Villa",
-    "price":200,
-    "features":["Swimming Pool","Theatre Space","Garden area"],
-    "location":"Bangalore,Near Marathali Road",
-    "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-}
-,
-{
-  "id":4,
-  "name":"Rajan Villa",
-  "price":200,
-  "features":["Swimming Pool","Theatre Space","Garden area"],
-  "location":"Bangalore,Near Marathali Road",
-  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-},  {
-  "id":4,
-  "name":"Rajan Villa",
-  "price":200,
-  "features":["Swimming Pool","Theatre Space","Garden area"],
-  "location":"Bangalore,Near Marathali Road",
-  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-},  {
-  "id":4,
-  "name":"Rajan Villa",
-  "price":200,
-  "features":["Swimming Pool","Theatre Space","Garden area"],
-  "location":"Bangalore,Near Marathali Road",
-  "url":"https://cdn.quasar.dev/img/parallax2.jpg"
-}
+      "id": 2,
+      "name": "Rajan Vill",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 3,
+      "price": 200,
+      "name": "Rajan Villa",
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    },
+    {
+      "id": 4,
+      "name": "Rajan Villa",
+      "price": 200,
+      "features": ["Swimming Pool", "Theatre Space", "Garden area"],
+      "location": "Bangalore,Near Marathali Road",
+      "url": "https://cdn.quasar.dev/img/parallax2.jpg",
+      "bookedDates": { "from": "2023/05/02", "to": "2023/05/05" }
+    }
   ]
 }
-

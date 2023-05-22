@@ -50,8 +50,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const { villa } = defineProps(["villa"]);
@@ -66,7 +64,7 @@ const detailsHandler = (id: String) => {
 <style scoped>
 .my-card {
   border-radius: 15px;
-  width: 390px;
+  width: 350px;
 }
 .features,
 .price,
@@ -97,14 +95,15 @@ const detailsHandler = (id: String) => {
 @media only screen and (min-width: 480px) and (max-width: 700px) {
   .my-card {
     width: 100% !important;
-    max-width: 80%;
+    max-width: 100%;
+    margin: 0;
   }
 }
 
-@media only screen and (min-width: 740px) and (max-width: 1332px) {
+@media only screen and (min-width: 740px) and (max-width: 1430px) {
   .my-card {
     width: 100% !important ;
-    max-width: 30%;
+    max-width: 29.5%;
 
     float: left;
   }
