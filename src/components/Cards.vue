@@ -1,5 +1,9 @@
 <template>
   <div class="outer">
+    <p>{{ villas.length }}</p>
+    <div class="" v-if="villas.length <= 0">
+      <p class="text-h2 text-bold text-italic">No Villas Available</p>
+    </div>
     <div class="q-pa-xl q-mx-sm cards">
       <Card
         v-if="villas.length > 0"
@@ -32,12 +36,31 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import Card from "./Card.vue";
+
 import axios from "axios";
+
+import { watch } from "vue";
+
 const villas = ref([]);
 const paginate = ref(5);
+const props = defineProps(["selectedDates"]);
 
 const showLoad = ref(true);
 const loading = ref(false);
+
+const isAvailableSlots = (villa) => {
+  const from = new Date(villa.bookedDates.from).getTime();
+  const to = new Date(villa.bookedDates.to).getTime();
+  const start = new Date(props.selectedDates.from).getTime();
+  const end = new Date(props.selectedDates.to).getTime();
+  console.log(from, to, start, end);
+  if ((start >= from && start <= to) || (end >= from && end <= to)) {
+    console.log("heree...");
+    return true;
+  }
+  return false;
+};
+
 const getVillaData = async () => {
   const { data, headers } = await axios.get(" http://localhost:3000/villas", {
     // params: {
@@ -45,8 +68,17 @@ const getVillaData = async () => {
     //   _limit: 4
     // }
   });
-  console.log(headers);
-  villas.value = data;
+  if (props.selectedDates.from !== "") {
+    console.log("in here...");
+    villas.value = data.filter((villa) => {
+      let val = isAvailableSlots(villa);
+      console.log(val);
+      return !val;
+    });
+    console.log(villas.value);
+  } else {
+    villas.value = data;
+  }
 };
 
 const loadHandler = () => {
@@ -64,7 +96,18 @@ const loadHandler = () => {
 };
 onMounted(async () => {
   await getVillaData();
+  console.log(props.selectedDates);
 });
+watch(
+  () => props.selectedDates,
+  async (prev, cur) => {
+    await getVillaData();
+    console.log(prev, cur);
+  },
+  {
+    deep: true,
+  }
+);
 </script>
 
 <style scoped>
