@@ -7,4 +7,7 @@
  
 </template>
 
-<style scoped></style>
+<style scoped>
+.ada{
+  
+}</style>
