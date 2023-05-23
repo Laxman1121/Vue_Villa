@@ -42,7 +42,7 @@
         label="Details"
         @click="detailsHandler(villa.id)"
       />
-      <q-btn flat no-caps color="secondary" label="Book" />
+      <!-- <q-btn flat no-caps color="secondary" label="Book" /> -->
 
       <q-space />
     </q-card-actions>

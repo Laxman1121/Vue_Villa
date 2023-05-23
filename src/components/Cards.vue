@@ -40,6 +40,7 @@ import Card from "./Card.vue";
 import axios from "axios";
 
 import { watch } from "vue";
+import { SelectedDates } from "./Home.vue";
 
 const villas = ref([]);
 const paginate = ref(5);
@@ -48,21 +49,39 @@ const props = defineProps(["selectedDates"]);
 const showLoad = ref(true);
 const loading = ref(false);
 
-const isAvailableSlots = (villa) => {
-  const from = new Date(villa.bookedDates.from).getTime();
-  const to = new Date(villa.bookedDates.to).getTime();
-  const start = new Date(props.selectedDates.from).getTime();
-  const end = new Date(props.selectedDates.to).getTime();
-  console.log(from, to, start, end);
-  if ((start >= from && start <= to) || (end >= from && end <= to)) {
-    console.log("heree...");
-    return true;
+export interface VillaData {
+  id?: number;
+  name?: string;
+  price?: string;
+  features?: string[];
+  location?: string;
+  url?: string;
+  bookedDates?: SelectedDates[];
+}
+const isAvailableSlots = (villa: VillaData) => {
+  let avail = false;
+
+  for (let i = 0; i < villa.bookedDates!.length; i++) {
+    const from = new Date(villa.bookedDates![i].from).getTime();
+
+    const to = new Date(villa.bookedDates![i].to).getTime();
+
+    const start = new Date(props.selectedDates.from).getTime();
+
+    const end = new Date(props.selectedDates.to).getTime();
+
+    if ((start >= from && start <= to) || (end >= from && end <= to)) {
+      avail = true;
+
+      break;
+    }
   }
-  return false;
+
+  return avail;
 };
 
 const getVillaData = async () => {
-  const { data, headers } = await axios.get(" http://localhost:3000/villas", {
+  const { data } = await axios.get(" http://localhost:3000/villas", {
     // params: {
     //   _page: 1,
     //   _limit: 4
@@ -70,7 +89,7 @@ const getVillaData = async () => {
   });
   if (props.selectedDates.from !== "") {
     console.log("in here...");
-    villas.value = data.filter((villa) => {
+    villas.value = data.filter((villa: VillaData) => {
       let val = isAvailableSlots(villa);
       console.log(val);
       return !val;
