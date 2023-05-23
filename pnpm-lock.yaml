@@ -4,6 +4,9 @@ dependencies:
   '@quasar/extras':
     specifier: ^1.16.3
     version: 1.16.3
+  loadash:
+    specifier: ^1.0.0
+    version: 1.0.0
   quasar:
     specifier: ^2.12.0
     version: 2.12.0
@@ -2039,6 +2042,11 @@ packages:
       strip-bom: 3.0.0
       type-fest: 0.3.1
     dev: true
+
+  /loadash@1.0.0:
+    resolution: {integrity: sha512-xlX5HBsXB3KG0FJbJJG/3kYWCfsCyCSus3T+uHVu6QL6YxAdggmm3QeyLgn54N2yi5/UE6xxL5ZWJAAiHzHYEg==}
+    deprecated: Package is unsupport. Please use the lodash package instead.
+    dev: false
 
   /locate-path@3.0.0:
     resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}

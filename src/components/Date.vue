@@ -7,7 +7,7 @@
     </div>
   </q-modal> -->
   <div>
-    <p>{{ days }}</p>
+    <p>{{ typeof selectedDates.from }}</p>
   </div>
   <q-btn icon="event" size="lg" round color="primary" class="dateIcon">
     <q-popup-proxy
@@ -16,7 +16,7 @@
       transition-show="scale"
       transition-hide="scale"
     >
-      <q-date v-model="days" range>
+      <q-date v-model="proxyDays" range>
         <div class="row items-center justify-end q-gutter-sm">
           <q-btn label="Cancel" color="primary" flat v-close-popup />
           <q-btn label="OK" color="primary" flat @click="save" v-close-popup />
@@ -37,10 +37,27 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { SelectedDates } from "./Home.vue";
 
-const minimizedModal = ref(false);
-const days = ref({ from: "2023/05/02", to: "2023/05/05" });
-const proxyDays = ref(days);
+let today = new Date(Date.now())
+  .toISOString()
+  .split("T")[0]
+  .split("-")
+  .join("/");
+let tomorrow = new Date();
+const selectedDates = ref<SelectedDates>({ from: "", to: "" });
+
+tomorrow.setDate(new Date(Date.now()).getDate() + 1);
+const days = ref({
+  from: today,
+  to: tomorrow.toISOString().split("T")[0].split("-").join("/"),
+});
+const proxyDays = ref({ from: "2023/05/10", to: "2023/05/15" });
+
+const emit = defineEmits<{
+  (e: "dates", selectedDates: SelectedDates): void;
+}>();
+
 // const clickHandler = () => {
 //   minimizedModal.value = !minimizedModal.value;
 // };
@@ -49,11 +66,8 @@ const updateProxy = () => {
 };
 
 const save = () => {
-  days.value = proxyDays.value;
-  proxyDays.value = {
-    from: new Date(Date.now()).toLocaleString().split(",")[0].toString(),
-    to: new Date(Date.now()).toLocaleString().split(",")[0].toString(),
-  };
+  selectedDates.value = proxyDays.value;
+  emit("dates", selectedDates.value);
 };
 </script>
 
