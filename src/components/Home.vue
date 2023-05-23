@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <Date />
+  <Date :selecteddates="" />
   <br /><br />
   <Cards />
 </template>

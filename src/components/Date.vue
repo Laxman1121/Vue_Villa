@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 
 const minimizedModal = ref(false);
 const days = ref({ from: "2023/05/02", to: "2023/05/05" });
@@ -48,12 +48,15 @@ const updateProxy = () => {
   proxyDays.value = days.value;
 };
 
+const emit = defineEmits(['selecteddates'])
 const save = () => {
   days.value = proxyDays.value;
   proxyDays.value = {
     from: new Date(Date.now()).toLocaleString().split(",")[0].toString(),
     to: new Date(Date.now()).toLocaleString().split(",")[0].toString(),
   };
+
+  emit('selecteddates',days.value);
 };
 </script>
 
