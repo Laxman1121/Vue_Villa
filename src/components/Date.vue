@@ -1,14 +1,4 @@
 <template>
-  <!-- <q-modal v-model="minimizedModal" minimized ref="modalRef">
-    <div style="padding: 50px">
-      <div class="q-display-1 q-mb-md">Minimized Modal</div>
-      <p>This one has backdrop on small screens too.</p>
-      <q-btn color="red" v-close-overlay label="Close" />
-    </div>
-  </q-modal> -->
-  <div>
-    <p>{{ typeof selectedDates.from }}</p>
-  </div>
   <q-btn icon="event" size="lg" round color="primary" class="dateIcon">
     <q-popup-proxy
       @before-show="updateProxy"
