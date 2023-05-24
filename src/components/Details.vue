@@ -1,5 +1,23 @@
 <template>
   <div class="main-container">
+    <q-dialog v-model="showModal">
+      <q-card>
+        <q-card-section class="bg-grey-6">
+          <div class="text-h4 text-bold q-px-sm">Booking Success</div>
+        </q-card-section>
+        <q-separator />
+        <q-card-section class="q-mx-md q-pt-md q-pb-none q-px-lg">
+          <p class="text-h6 text-bold">
+            Successfully Booked
+            <span class="text-italic text-red-5">{{ villa.name }}</span>
+          </p>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="OK" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
     <div id="q-app" style="min-height: 100%">
       <div class="">
         <q-carousel
@@ -101,8 +119,9 @@
           size="lg"
           rounded
           no-caps
-          @click="confirmModal"
-          label="Book"
+          @click="modalHandler"
+          :disable="bookedStatus"
+          :label="bookButton"
         ></q-btn>
         <q-btn
           :loading="loading"
@@ -128,8 +147,10 @@ import { VillaData } from "./Cards.vue";
 import axios from "axios";
 const route = useRoute();
 const router = useRouter();
-
+const bookButton = ref<string>("Book");
 const villa = ref<VillaData>({});
+const showModal = ref<boolean>(false);
+const bookedStatus = ref<boolean>(false);
 const { id } = route.params;
 const loading = ref([false, false]);
 const autoplay = ref(true);
@@ -142,11 +163,16 @@ onMounted(async () => {
   villa.value = data;
 });
 
-const confirmModal = () => {
-  alert("Booked SUccesfully");
-};
 const cancelHandler = () => {
   router.push({ path: "/" });
+};
+
+const modalHandler = () => {
+  showModal.value = true;
+  setTimeout(() => {
+    bookButton.value = "Booked";
+    bookedStatus.value = true;
+  }, 500);
 };
 </script>
 

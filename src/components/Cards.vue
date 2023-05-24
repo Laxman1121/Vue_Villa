@@ -1,6 +1,5 @@
 <template>
   <div class="outer">
-    <p>{{ villas.length }}</p>
     <div class="" v-if="villas.length <= 0">
       <p class="text-h2 text-bold text-italic">No Villas Available</p>
     </div>
